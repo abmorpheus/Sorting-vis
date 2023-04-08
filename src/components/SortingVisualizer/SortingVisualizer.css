@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+}
+.array {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.arr-bar {
+    /* max-width: 100px; */
+    width: 100%;
+    background-color: coral;
+    margin: 1px;
+}
+
+button {
+    margin: 5px;
+}
