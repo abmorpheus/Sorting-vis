@@ -2,7 +2,6 @@ export const doBubbleSort = (array) => {
     let animations = [];
     let auxArr = [...array];
     bubbleSort(animations, auxArr);
-    
     return [animations, auxArr];
 }
 
@@ -31,8 +30,5 @@ const bubbleSort = (animations, auxArr) => {
 }
 
 const swap = (auxArr, first, second) => {
-    // let temp = auxArr[first];
-    // auxArr[first] = auxArr[second];
-    // auxArr[second] = temp;
     [auxArr[first], auxArr[second]] = [auxArr[second], auxArr[first]];
 }
