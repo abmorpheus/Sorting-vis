@@ -1,4 +1,4 @@
-export const doInsertionSort = (array) => {
+const doInsertionSort = (array) => {
     let animations = [];
     let auxArr = [...array];
     insertionSort(animations, auxArr);
@@ -31,3 +31,5 @@ const insertionSort = (animations, auxArr) => {
 const swap = (auxArr, first, second) => {
     [auxArr[first], auxArr[second]] = [auxArr[second], auxArr[first]];
 }
+
+export default doInsertionSort;

@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react"
 import "./SortingVisualizer.css"
-import {doBubbleSort} from "../Algorithms/BubbleSort";
-import {doInsertionSort} from "../Algorithms/InsertionSort";
+import doBubbleSort from "../Algorithms/BubbleSort";
+import doInsertionSort from "../Algorithms/InsertionSort";
+import doSelectionSort from "../Algorithms/SelectionSort";
 
 const SortingVisualizer = () => {
     const [arr, setArr] = useState([]);
@@ -21,7 +22,7 @@ const SortingVisualizer = () => {
     }
 
 
-    const doAnimations = animations => {
+    const doAnimations = (animations, sortedArr) => {
         for(let i = 0; i<animations.length; ++i) {
             let type = animations[i].type;
             let arrBars = document.getElementsByClassName("arr-bar");
@@ -42,22 +43,24 @@ const SortingVisualizer = () => {
                 }, i*1); 
             }
         }
+        setTimeout(() => {
+            setArr(sortedArr);
+        }, animations.length*1);
     }
 
     const bubbleSort = () => {
         let [animations, sortedArr] = doBubbleSort(arr);
-        doAnimations(animations);
-        setTimeout(() => {
-            setArr(sortedArr);
-        }, animations.length*1);
+        doAnimations(animations, sortedArr);
     }
     
     const insertionSort = () => {
         let [animations, sortedArr] = doInsertionSort(arr);
-        doAnimations(animations);
-        setTimeout(() => {
-            setArr(sortedArr);
-        }, animations.length*1);
+        doAnimations(animations, sortedArr);
+    }
+
+    const selectionSort = () => {
+        let [animations, sortedArr] = doSelectionSort(arr);
+        doAnimations(animations, sortedArr);
     }
    
     return <>
@@ -72,7 +75,7 @@ const SortingVisualizer = () => {
         <button onClick={() => generateArray(450)}>NEW ARRAY</button>
         <button onClick={bubbleSort}>Bubble Sort</button>
         <button onClick={insertionSort}>Insertion Sort</button>
-        <button onClick={bubbleSort}>Selection Sort</button>
+        <button onClick={selectionSort}>Selection Sort</button>
         <button onClick={bubbleSort}>Merge Sort</button>
         <button onClick={bubbleSort}>Quick Sort</button>
         <button onClick={bubbleSort}>Heap Sort</button>

@@ -1,4 +1,4 @@
-export const doBubbleSort = (array) => {
+const doBubbleSort = (array) => {
     let animations = [];
     let auxArr = [...array];
     bubbleSort(animations, auxArr);
@@ -28,3 +28,5 @@ const bubbleSort = (animations, auxArr) => {
 const swap = (auxArr, first, second) => {
     [auxArr[first], auxArr[second]] = [auxArr[second], auxArr[first]];
 }
+
+export default doBubbleSort;
