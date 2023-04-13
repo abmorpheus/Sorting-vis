@@ -3,13 +3,14 @@ import "./SortingVisualizer.css"
 import doBubbleSort from "../Algorithms/BubbleSort";
 import doInsertionSort from "../Algorithms/InsertionSort";
 import doSelectionSort from "../Algorithms/SelectionSort";
+import doMergeSort from "../Algorithms/MergeSort";
 
 const SortingVisualizer = () => {
     const [arr, setArr] = useState([]);
     const [arrSize, setArrSize] = useState(100);
 
     useEffect(() => {
-        generateArray(100)
+        generateArray(101);
     }, []);
 
     const generateArray = (range) => {
@@ -62,6 +63,11 @@ const SortingVisualizer = () => {
         let [animations, sortedArr] = doSelectionSort(arr);
         doAnimations(animations, sortedArr);
     }
+
+    const mergeSort = () => {
+        let [animations, sortedArr] = doMergeSort(arr);
+        doAnimations(animations, sortedArr);
+    }
    
     return <>
         <h1 style = {{color: "wheat"}}>Sorting Visualizer</h1>
@@ -76,7 +82,7 @@ const SortingVisualizer = () => {
         <button onClick={bubbleSort}>Bubble Sort</button>
         <button onClick={insertionSort}>Insertion Sort</button>
         <button onClick={selectionSort}>Selection Sort</button>
-        <button onClick={bubbleSort}>Merge Sort</button>
+        <button onClick={mergeSort}>Merge Sort</button>
         <button onClick={bubbleSort}>Quick Sort</button>
         <button onClick={bubbleSort}>Heap Sort</button>
     </>
