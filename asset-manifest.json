@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Sorting-vis/static/css/main.98340f96.css",
+    "main.js": "/Sorting-vis/static/js/main.ffef44ea.js",
+    "index.html": "/Sorting-vis/index.html",
+    "main.98340f96.css.map": "/Sorting-vis/static/css/main.98340f96.css.map",
+    "main.ffef44ea.js.map": "/Sorting-vis/static/js/main.ffef44ea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98340f96.css",
+    "static/js/main.ffef44ea.js"
+  ]
+}
