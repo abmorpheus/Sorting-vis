@@ -16,7 +16,6 @@ function mergeSort(auxArr, startIdx, endIdx, animations) {
   function doMerge(auxArr, startIdx, middleIdx, endIdx, animations) {
     let i = startIdx;
     let j = middleIdx + 1;
-    let k = 0;
     let tempArr = []
     while (i <= middleIdx && j <= endIdx) {
       animations.push({indices:[i, j], type: "comp", color: "tomato"});
@@ -42,9 +41,5 @@ function mergeSort(auxArr, startIdx, endIdx, animations) {
     }
   }
 
-
-const swap = (auxArr, first, second) => {
-    [auxArr[first], auxArr[second]] = [auxArr[second], auxArr[first]];
-}
 
 export default doMergeSort;
